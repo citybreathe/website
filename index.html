@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>citybreathe - Pollution live</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Joe McAlister">
+    <meta name="description" content="Citybreathe is a project that allows anyone to track the pollution in their current location for free. Currently available in the United Kingdom, using data provided by the Environmental Research Group of Kings College London citybreathe continously monitors and logs the levels of PM10, PM2.5, NO2 and O3 levels across London and the South East. The current and histroric data is provided here and updated hourly.">
+    <link rel="author" href="https://plus.google.com/u/0/110592369588276506172"/>
+    <meta property="og:title" content="citybreathe - Air pollution monitor"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Citybreathe is a project that allows anyone to track the pollution in their current location for free. Currently available in the United Kingdom, using data provided by the Environmental Research Group of Kings College London citybreathe continously monitors and logs the levels of PM10, PM2.5, NO2 and O3 levels across London and the South East. The current and histroric data is provided here and updated hourly."/>
+    <meta property='og:image' content='https://citybreathe.com/img/facebook-banner.jpg'/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <link rel='mask-icon' href='https://citybreathe.com/img/citybreathe-logo.svg' color='black'>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="container">
+        <div id="logo"></div>
+        <h1>citybreathe<sup>BETA</sup></h1>
+        
+        <div class="explanation-text">
+            <center>
+                <a href="/lookup.html">Lookup a specific location</a> - <a href="/information.html">Descriptions of the Pollutants and Bands</a>
+            </center>
+            
+            <p>Citybreathe is a project that allows anyone to track the pollution in their current location for free. Currently available in the United Kingdom, using data provided by the Environmental Research Group of Kings College London citybreathe continuously monitors and logs the levels of PM10, PM2.5, NO2 and O3 levels across London and the South East. The current and historic data is provided here and updated hourly. </p>
+            <p>This project is in beta and will be constantly updated with additional graphs and the ability to search the historical data.</p>
+        </div>
+        
+        <div id="graphBlanket">
+            <div id="graph1">
+                <canvas id="mChart1" class="mainPageGraph" width='400' height='400'></canvas>
+                <div class="graph1-desc">Loading...</div>
+            </div>
+
+            <div id="graph2">
+                <canvas id="mChart2" class="mainPageGraph" width='400' height='400'></canvas>
+                <div class="graph2-desc">Loading...</div>
+            </div>
+        </div>
+        
+        <div id="moduleBlanket">
+            <div id="module1">
+                Loading...
+            </div>
+            <div id="module2">
+                Loading...
+            </div>
+        </div>
+        
+        <div id="badLocationsList">
+            <div class="explanation-text">
+                <p>The following locations have reached or exceeded band 4 during the past 3 weeks.</p>
+            </div>
+            
+            <table id="badLocTable" cellspacing="0">
+                <tbody>
+                  <tr align="left">
+                    <th width="25%">Location:</th>
+                    <th width="10%">Highest band:</th>
+                    <th width="20%">Type of pollutant:</th>
+                    <th width="20%">Latest breach:</th>
+                    <th width="20%">Number of times exceeded:</th>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="credit">Created by <a href="https://joemcalister.com">Joe McAlister</a></div>
+        
+        <div class="explanation-text-fineprint">
+            <p>Information for London and the South East is obtained from the <a href="http://www.erg.kcl.ac.uk">Environmental Research Group of Kings College London</a>, using data from the <a href="http://www.londonair.org.uk">London Air Quality Network</a>. This information is licensed under the terms of the Open Government Licence.</p>
+            
+            <p>For more information regarding the data or the site in general please contact Joe McAlister by visiting <a href="https://joemcalister.com">this site</a>.</p>
+        </div>
+    </div>
+    
+    <!-- scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/stacktable.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/page.min.js" async></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>citybreathe - Lookup a location</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <link rel='mask-icon' href='https://citybreathe.com/img/citybreathe-logo.svg' color='black'>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="container">
+        <a href="/"><div id="logo"></div></a>
+        <h1>citybreathe<sup>BETA</sup></h1>
+        
+        <div class="explanation-text">
+            <center>
+                <a href="/">Home</a> - <a href="/information.html">Descriptions of the Pollutants and Bands</a>
+            </center>
+            
+            <p>To lookup a specific location please enter a postcode or town/cityname below, this data is updated hourly and is generated live so may take a few seconds.</p>
+            <form id="target">
+                <input type="text" name="location" id="locationText" placeholder="Postcode or town/city name">
+            </form>
+            <ul id="searchResults">
+            </ul>
+            
+            <div id="search_status"></div>
+            <div id="station-info"></div>
+        </div>
+    
+        
+        <div id="lChartLRContainer">
+            <div id="lChartLeft">
+                The current levels of pollution, updated hourly
+                <canvas id="lChartSmallPi1" width='400' height='400'></canvas>
+            </div>
+            <div id="lChartRight">
+                Pollution bands over the last 7 days
+                <canvas id="lChartSmallPi2" width='400' height='400'></canvas>
+            </div>
+        </div>
+        
+        <div id="lMainGraphContainer">
+            <center>The pollution bands over the last 7 days, click the pollutant labels to seperate the data</center>
+            <canvas id="lMainGraph" width='400' height='400'></canvas>
+        </div>
+        
+        
+        <div id="credit">Created by <a href="https://joemcalister.com">Joe McAlister</a></div>
+        <div class="explanation-text-fineprint">
+            <p>Information for London and the South East is obtained from the <a href="http://www.erg.kcl.ac.uk">Environmental Research Group of Kings College London</a>, using data from the <a href="http://www.londonair.org.uk">London Air Quality Network</a>. This information is licensed under the terms of the Open Government Licence.</p>
+            
+            <p>For more information regarding the data or the site in general please contact Joe McAlister by visiting <a href="https://joemcalister.com">this site</a>.</p>
+        </div>
+    </div>
+    
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/location.min.js" async></script>
+    
+</body>
+</html>
